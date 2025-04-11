@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Meu Amor</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffb6c1, #ff69b4);
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            position: relative;
+            width: 80%;
+            max-width: 400px;
+            z-index: 2;
+        }
+        .polaroid {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transform: rotate(-3deg);
+        }
+        .polaroid img {
+            width: 90%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .small-photo {
+            position: absolute;
+            width: 70px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            background: white;
+            padding: 5px;
+            transform: rotate(5deg);
+        }
+        .top-left { top: 20px; left: 20px; }
+        .top-right { top: 20px; right: 20px; }
+        .bottom-left { bottom: 20px; left: 20px; }
+        .bottom-right { bottom: 20px; right: 20px; }
+        .caption {
+            margin-top: 5px;
+            font-size: 1.2em;
+            color: black;
+            font-weight: bold;
+        }
+        .message {
+            margin-top: 15px;
+            font-size: 1.5em;
+            color: black;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+        @keyframes floatingHearts {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            50% { transform: translateY(-50px) scale(1.2); opacity: 0.8; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+        .heart {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            font-size: 2em;
+            color: red;
+            opacity: 0;
+            animation: floatingHearts 4s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://i.ibb.co/20RQ1Lw2/Imagem-do-Whats-App-de-2025-03-30-s-19-28-54-5c171942.jpg" class="small-photo top-left" alt="Foto nossa pequena">
+    <img src="https://i.ibb.co/wrdpzrrb/Imagem-do-Whats-App-de-2025-03-31-s-23-31-29-e53523b9.jpg" class="small-photo top-right" alt="Foto nossa pequena">
+    <img src="https://i.ibb.co/20RQ1Lw2/Imagem-do-Whats-App-de-2025-03-30-s-19-28-54-5c171942.jpg" class="small-photo bottom-left" alt="Foto nossa pequena">
+    <img src="https://i.ibb.co/wrdpzrrb/Imagem-do-Whats-App-de-2025-03-31-s-23-31-29-e53523b9.jpg" class="small-photo bottom-right" alt="Foto nossa pequena">
+    <div class="container">
+        <div class="polaroid">
+            <img id="photo" src="https://i.ibb.co/bg3Scw1H/Chat-GPT-Image-30-de-mar-de-2025-19-07-37.png" alt="Foto nossa">
+            <div class="caption">Para sempre com você ❤️</div>
+        </div>
+        <div class="message">Você é a luz dos meus dias, a razão do meu sorriso e o amor da minha vida! ❤️</div>
+    </div>
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }
+        setInterval(createHeart, 800);
+    </script>
+</body>
+</html>
